@@ -164,9 +164,9 @@ A collection of apps that may come handy when configuring your build. Reminder, 
 
 ## Acknowledgements
 Apple for macOS<br>
-@Acidanthera for OpenCore<br>
-@dortania for guide<br>
-@CorpNewt for software<br>
-@headkaze for Hackintool<br>
-@xzhih for HiDPI<br>
+[Acidanthera](https://github.com/acidanthera) for OpenCore<br>
+[dortania](https://github.com/dortania) for guide<br>
+[CorpNewt](https://github.com/corpnewt) for software<br>
+[headkaze](https://github.com/headkaze) for Hackintool<br>
+[xzhih](https://github.com/xzhih) for HiDPI<br>
 And everyone from the OpenCore community ♥️
