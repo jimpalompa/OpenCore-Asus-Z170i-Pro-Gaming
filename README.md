@@ -15,23 +15,23 @@ I'm releasing it here to reference my own configuration, and to share my EFI wit
 ## Hardware
 Remember to read the [anti-hackintosh buyers guide](https://dortania.github.io/Anti-Hackintosh-Buyers-Guide/) if you're planning on buying components for a new build.
 
-| Item        | Brand          | Model                                                      | Driver                                                                                                    | Comment         |
-| ----------- | -------------- | ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------- |
-| Motherboard | Asus           | Z170i Pro Gaming                                           | [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg) <br>[Lilu](https://github.com/acidanthera/Lilu) |                 |
-| CPU         | Intel          | Core i5 6600K 3,5GHz                                       | [VirtualSMC](https://github.com/acidanthera/VirtualSMC)                                                   | _Skylake_       |
-| RAM         | Corsair        | Vengeance LPX DDR4 3000MHz 8GB <sup>x2</sup>               | built-in                                                                                                  |                 |
-| iGPU        | Intel          | HD Graphics 530                                            | [WhateverGreen](https://github.com/acidanthera/WhateverGreen)                                             | _Headless mode_ |
-| dGPU        | -              | -                                                          |                                                                                                           |                 |
-| SSD         | Intel          | 600p Series 256GB M.2 <sup>x1</sup>                        | [NVMeFix](https://github.com/acidanthera/NVMeFix)                                                         |                 |
-| HDD         | WD             | Reed 3TB 3.5" <sup>x1</sup> <br>Red 4TB 3.5" <sup>x3</sup> | built-in                                                                                                  |                 |
-| Bluetooth   | Broadcom       | BCM94352Z DW1560                                           | [AirportBrcmFixup](https://github.com/acidanthera/AirportBrcmFixup)                                       | _Replaced_      |
-| Wifi        | Broadcom       | BCM94352Z DW1560                                           | [BrcmPatchRAM](https://github.com/acidanthera/BrcmPatchRAM)                                               | _Replaced_      |
-| Ethernet    | Intel          | I219-V                                                     | [IntelMausi](https://github.com/acidanthera/IntelMausi)                                                   |                 |
-| Audio       | Realtek        | ALC1150                                                    | [AppleALC](https://github.com/acidanthera/AppleALC)                                                       | _Layout-ID 99_  |
-| PSU         | EVGA           | SuperNOVA G2 650W                                          |                                                                                                           |                 |
-| Case        | Fractal Design | Node 304                                                   |                                                                                                           |                 |
-| CPU cooler  | Cryorig        | H7                                                         |                                                                                                           |                 |
-| Display     | EVanlak        | HDMI dummy                                                 |                                                                                                           |                 |
+| Item        | Brand          | Model                                                     | Driver                                                                                                    | Comment         |
+| ----------- | -------------- | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------- |
+| Motherboard | Asus           | Z170i Pro Gaming                                          | [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg) <br>[Lilu](https://github.com/acidanthera/Lilu) |                 |
+| CPU         | Intel          | Core i5 6600K 3,5GHz                                      | [VirtualSMC](https://github.com/acidanthera/VirtualSMC)                                                   | _Skylake_       |
+| RAM         | Corsair        | Vengeance LPX DDR4 3000MHz 8GB <sup>x2</sup>              | built-in                                                                                                  |                 |
+| iGPU        | Intel          | HD Graphics 530                                           | [WhateverGreen](https://github.com/acidanthera/WhateverGreen)                                             | _Headless mode_ |
+| dGPU        | -              | -                                                         |                                                                                                           |                 |
+| SSD         | Intel          | 970 EVO 500GB M.2 <sup>x1</sup>                           | [NVMeFix](https://github.com/acidanthera/NVMeFix)                                                         |                 |
+| HDD         | WD             | Red 3TB 3.5" <sup>x1</sup> <br>Red 4TB 3.5" <sup>x3</sup> | built-in                                                                                                  |                 |
+| Bluetooth   | Broadcom       | BCM94352Z DW1560                                          | [AirportBrcmFixup](https://github.com/acidanthera/AirportBrcmFixup)                                       | _Replaced_      |
+| Wifi        | Broadcom       | BCM94352Z DW1560                                          | [BrcmPatchRAM](https://github.com/acidanthera/BrcmPatchRAM)                                               | _Replaced_      |
+| Ethernet    | Intel          | I219-V                                                    | [IntelMausi](https://github.com/acidanthera/IntelMausi)                                                   |                 |
+| Audio       | Realtek        | ALC1150                                                   | [AppleALC](https://github.com/acidanthera/AppleALC)                                                       | _Layout-ID 99_  |
+| PSU         | EVGA           | SuperNOVA G2 650W                                         |                                                                                                           |                 |
+| Case        | Fractal Design | Node 304                                                  |                                                                                                           |                 |
+| CPU cooler  | Cryorig        | H7                                                        |                                                                                                           |                 |
+| Display     | EVanlak        | HDMI dummy                                                |                                                                                                           |                 |
 
 ## BIOS setup
 Begin by loading optimized default options, then make sure settings are as below.
