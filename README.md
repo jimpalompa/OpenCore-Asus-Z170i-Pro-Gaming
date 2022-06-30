@@ -78,17 +78,17 @@ For USB mapping I enabled **ten** physical ports, and bluetooth. That is every p
 
 | Port | Type                      | Name                                    | Enabled                                                                                                                                                                                                                                     | Comment                 |
 | :--: | ------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- |
-|  A   | USB 2.0 <sup>Type-A</sup> | HS09                                    | ![Yes](https://via.placeholder.com/11/0000fd/?text=+)                                                                                                                                                                                       |                         |
-|  B   | USB 2.0 <sup>Type-A</sup> | HS10                                    | ![Yes](https://via.placeholder.com/11/0000fd/?text=+)                                                                                                                                                                                       |                         |
-|  C   | USB 3.0 <sup>Type-A</sup> | HS05 + SS05                             | ![Yes](https://via.placeholder.com/11/0000fd/?text=+) + ![Yes](https://via.placeholder.com/11/0000fd/?text=+)                                                                                                                               |                         |
-|  D   | USB 3.0 <sup>Type-A</sup> | HS06 + SS06                             | ![Yes](https://via.placeholder.com/11/0000fd/?text=+) + ![Yes](https://via.placeholder.com/11/0000fd/?text=+)                                                                                                                               |                         |
-|  E   | USB 3.0 <sup>Type-A</sup> | HS07 + SS07                             | ![Yes](https://via.placeholder.com/11/0000fd/?text=+) + ![Yes](https://via.placeholder.com/11/0000fd/?text=+)                                                                                                                               |                         |
-|  F   | USB 3.0 <sup>Type-A</sup> | HS08 + SS08                             | ![Yes](https://via.placeholder.com/11/0000fd/?text=+) + ![Yes](https://via.placeholder.com/11/0000fd/?text=+)                                                                                                                               |                         |
-|  G   | Bluetooth                 | HS13                                    | ![Yes](https://via.placeholder.com/11/0000fd/?text=+)                                                                                                                                                                                       |                         |
-|  H   | USB 3.0 Header            | HS01 + SS01 &nbsp; / &nbsp; HS02 + SS02 | ![Yes](https://via.placeholder.com/11/0000fd/?text=+) + ![Yes](https://via.placeholder.com/11/0000fd/?text=+) &nbsp; / &nbsp; ![Yes](https://via.placeholder.com/11/0000fd/?text=+) + ![Yes](https://via.placeholder.com/11/0000fd/?text=+) | _Front panel_           |
-|  I   | USB 2.0 Header            | HSxx + HSxx                             | ![No](https://via.placeholder.com/11/808080/?text=+) + ![No](https://via.placeholder.com/11/808080/?text=+)                                                                                                                                 | _PCI bracket *_         |
-|  J   | USB 3.1 <sup>Type-A</sup> | 1 + 3                                   | ![Yes](https://via.placeholder.com/11/0000fd/?text=+) + ![Yes](https://via.placeholder.com/11/0000fd/?text=+)                                                                                                                               | _ASMedia controller **_ |
-|  K   | USB 3.1 <sup>Type-A</sup> | 2 + 4                                   | ![Yes](https://via.placeholder.com/11/0000fd/?text=+) + ![Yes](https://via.placeholder.com/11/0000fd/?text=+)                                                                                                                               | _ASMedia controller **_ |
+|  A   | USB 2.0 <sup>Type-A</sup> | HS09                                    | ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                                                                                       |                         |
+|  B   | USB 2.0 <sup>Type-A</sup> | HS10                                    | ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                                                                                       |                         |
+|  C   | USB 3.0 <sup>Type-A</sup> | HS05 + SS05                             | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               |                         |
+|  D   | USB 3.0 <sup>Type-A</sup> | HS06 + SS06                             | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               |                         |
+|  E   | USB 3.0 <sup>Type-A</sup> | HS07 + SS07                             | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               |                         |
+|  F   | USB 3.0 <sup>Type-A</sup> | HS08 + SS08                             | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               |                         |
+|  G   | Bluetooth                 | HS13                                    | ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                                                                                       |                         |
+|  H   | USB 3.0 Header            | HS01 + SS01 &nbsp; / &nbsp; HS02 + SS02 | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd) &nbsp; / &nbsp; ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd) | _Front panel_           |
+|  I   | USB 2.0 Header            | HSxx + HSxx                             | ![No](https://dummyimage.com/11/808080/808080) + ![No](https://dummyimage.com/11/808080/808080)                                                                                                                                 | _PCI bracket *_         |
+|  J   | USB 3.1 <sup>Type-A</sup> | 1 + 3                                   | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               | _ASMedia controller **_ |
+|  K   | USB 3.1 <sup>Type-A</sup> | 2 + 4                                   | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               | _ASMedia controller **_ |
 
 <sup>_* I have no PCI bracket for the USB 2.0 Header, so I could not recognize the names for those ports._</sup><br>
 <sup>_** This is the second USB controller and has its own port limit. No need for USB map on this controller._</sup>
@@ -96,16 +96,16 @@ For USB mapping I enabled **ten** physical ports, and bluetooth. That is every p
 ## Audio layout
 For audio layout i used **layout-ID 99**, it seemed most appropriate. Layout-ID 7 works as well, with the same exact functionality*. All other compatible layouts for this audio chipset were tested and did not work fully.
 
-![Blue audio jack](https://via.placeholder.com/11/0000fd/?text=+) Blue audio jack acts as `Line In`<br>
-![Green audio jack](https://via.placeholder.com/11/00ad00/?text=+) Green audio jack acts as `Internal Speakers`<br>
-![Red audio jack](https://via.placeholder.com/11/e70000/?text=+) Red audio jack acts as `Internal Microphone`
+![Blue audio jack](https://dummyimage.com/11/0000fd/0000fd) Blue audio jack acts as `Line In`<br>
+![Green audio jack](https://dummyimage.com/11/00ad00/00ad00) Green audio jack acts as `Internal Speakers`<br>
+![Red audio jack](https://dummyimage.com/11/e70000/e70000) Red audio jack acts as `Internal Microphone`
 
-![Orange audio jack](https://via.placeholder.com/11/fc6400/?text=+) Orange audio jack acts as `Line Out`<br>
-![Black audio jack](https://via.placeholder.com/11/24292f/?text=+) Black audio jack acts as `Line Out`<br>
-![Optical S/PDIF](https://via.placeholder.com/11/808080/?text=+) Optical S/PDIF acts as `Digital Out`
+![Orange audio jack](https://dummyimage.com/11/fc6400/fc6400) Orange audio jack acts as `Line Out`<br>
+![Black audio jack](https://dummyimage.com/11/24292f/24292f) Black audio jack acts as `Line Out`<br>
+![Optical S/PDIF](https://dummyimage.com/11/808080/808080) Optical S/PDIF acts as `Digital Out`
 
-![Front panel top audio jack](https://via.placeholder.com/11/808080/?text=+) Front panel top audio jack acts as `Line In` <sup>_(switches from Internal Microphone if plugged in)_</sup><br>
-![Front panel bottom audio jack](https://via.placeholder.com/11/808080/?text=+) Front panel bottom audio jack acts as `Headphones` <sup>_(switches from Internal Speakers if plugged in)_</sup>
+![Front panel top audio jack](https://dummyimage.com/11/808080/808080) Front panel top audio jack acts as `Line In` <sup>_(switches from Internal Microphone if plugged in)_</sup><br>
+![Front panel bottom audio jack](https://dummyimage.com/11/808080/808080) Front panel bottom audio jack acts as `Headphones` <sup>_(switches from Internal Speakers if plugged in)_</sup>
 
 ![Audio layout](opencore_asus_z170i_pro_gaming_audio_ports.jpg)
 <sup>_* The only difference between these layouts is that layout99.xml has the key MaximumBootBeepValue, value 64. It also has the key DspFunction2 with various other keys and values._</sup>
@@ -169,4 +169,4 @@ Apple for macOS<br>
 [CorpNewt](https://github.com/corpnewt) for software<br>
 [headkaze](https://github.com/headkaze) for Hackintool<br>
 [xzhih](https://github.com/xzhih) for HiDPI<br>
-And everyone from the OpenCore community ♥️
+And everyone from the OpenCore community 🖤
