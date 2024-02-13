@@ -1,3 +1,5 @@
+**Sorry, I no longer maintain this build, I've moved on with other project. Thank you all for the support** ♥️
+
 # OpenCore Asus Z170i Pro Gaming
 An OpenCore EFI for Asus Z170i Pro Gaming mini-ITX motherboard, with Skylake processor. See compatible macOS versions in my releases. I'm using this build as a server. It is my third hackintosh build so far.
 
