@@ -10,7 +10,7 @@ I'm releasing it here to reference my own configuration, and to share my EFI wit
 ## Overview
 - This build runs on the integrated GPU alone, it has no dedicated GPU. If you are using a dGPU you need to read the [GPU support](https://dortania.github.io/OpenCore-Install-Guide/macos-limits.html#gpu-support) wiki.
 - No beauty treatments were done in this build, that means no OpenCore GUI and no boot-chime. I want to keep everything simple and minimal. You can enable all of this by following the [beauty treatment](https://dortania.github.io/OpenCore-Post-Install/cosmetic/gui.html) guide.
-- Wireless card for bluetooth and wifi (Qualcomm Atheros QCNFA364A) is replaced. I'm using the Broadcom BCM94352Z DW1560 card instead. If you wish to swap the wireless card, remember to read [wireless buyers guide](https://dortania.github.io/Wireless-Buyers-Guide/) first.
+- Wireless card for bluetooth and wifi (Qualcomm Atheros QCNFA364A) is disabled and replaced. I'm using the fenvi T919 (BCM94360CD) card instead. If you wish to swap the wireless card, remember to read [wireless buyers guide](https://dortania.github.io/Wireless-Buyers-Guide/) first.
 
 ## Hardware
 Remember to read the [anti-hackintosh buyers guide](https://dortania.github.io/Anti-Hackintosh-Buyers-Guide/) if you're planning on buying components for a new build.
@@ -24,14 +24,14 @@ Remember to read the [anti-hackintosh buyers guide](https://dortania.github.io/A
 | dGPU        | -              | -                                                         |                                                                                                           |                 |
 | SSD         | Intel          | 970 EVO 500GB M.2 <sup>x1</sup>                           | [NVMeFix](https://github.com/acidanthera/NVMeFix)                                                         |                 |
 | HDD         | WD             | Red 3TB 3.5" <sup>x1</sup> <br>Red 4TB 3.5" <sup>x3</sup> | built-in                                                                                                  |                 |
-| Bluetooth   | Broadcom       | BCM94352Z DW1560                                          | [AirportBrcmFixup](https://github.com/acidanthera/AirportBrcmFixup)                                       | _Replaced_      |
-| Wifi        | Broadcom       | BCM94352Z DW1560                                          | [BrcmPatchRAM](https://github.com/acidanthera/BrcmPatchRAM)                                               | _Replaced_      |
+| Bluetooth   | fenvi          | T919                                                      | built-in                                                                                                  | _Replaced_      |
+| Wifi        | fenvi          | T919                                                      | built-in                                                                                                  | _Replaced_      |
 | Ethernet    | Intel          | I219-V                                                    | [IntelMausi](https://github.com/acidanthera/IntelMausi)                                                   |                 |
 | Audio       | Realtek        | ALC1150                                                   | [AppleALC](https://github.com/acidanthera/AppleALC)                                                       | _Layout-ID 99_  |
 | PSU         | EVGA           | SuperNOVA G2 650W                                         |                                                                                                           |                 |
 | Case        | Fractal Design | Node 304                                                  |                                                                                                           |                 |
 | CPU cooler  | Cryorig        | H7                                                        |                                                                                                           |                 |
-| Display     | EVanlak        | HDMI dummy                                                |                                                                                                           |                 |
+| Display     | EVanlak        | Sony XR50X93J 50" <br>P2422H 24"                          |                                                                                                           |                 |
 
 ## BIOS setup
 Begin by loading optimized default options, then make sure settings are as below.
@@ -55,6 +55,8 @@ Begin by loading optimized default options, then make sure settings are as below
 | `Onboard Devices Config`                             | SupremeFX LED Lighting                   | Disabled          | _Personal preference_            |
 | `Onboard Devices Config`                             | Asmedia USB 3.1 Controller               | Enabled           |                                  |
 | `Onboard Devices Config`                             | Asmedia USB 3.1 Battery Charging Support | Enabled           | _Personal preference_            |
+| `Onboard Devices Config`                             | Wi-Fi Controller                         | Disabled          | _Replaced by PCI card_           |
+| `Onboard Devices Config`                             | Bluetooth Controller                     | Disabled          | _Replaced by PCI card_           |
 | `APM Configuration`                                  | Restore AC Power Loss                    | Power On          | _Personal preference_            |
 | `APM Configuration`                                  | Power On By PCI-E                        | Enabled           |                                  |
 | `Network Stack Config`                               | Network Stack                            | Disabled          |                                  |
@@ -72,7 +74,7 @@ Begin by loading optimized default options, then make sure settings are as below
 <sup>_* As recommended in OpenCore install guide, [Skylake: Intel BIOS settings](https://dortania.github.io/OpenCore-Install-Guide/config.plist/skylake.html#intel-bios-settings)._</sup>
 
 ## USB ports
-For USB mapping I enabled **ten** physical ports, and bluetooth. That is every port available, except the internal USB 2.0 Header. Remember that you can have a total of 15 ports per USB controller, this board has two controllers. USB 3.0/1 counts as two ports for backward compatibility. See image and table below which ports are available and which I chose to map in USBPorts.kext. Use [USBMap](https://github.com/corpnewt/USBMap) or [Hackintool](https://github.com/headkaze/Hackintool) if you wish to create your own USB map. The ASMedia USB controller did not need a USB map.
+For USB mapping I enabled **ten** physical ports, and bluetooth <sup>M.2</sup>. That is every port available, except the internal USB 2.0 Header. Remember that you can have a total of 15 ports per USB controller, this board has two controllers. USB 3.0/1 counts as two ports for backward compatibility. See image and table below which ports are available and which I chose to map in USBPorts.kext. Use [USBMap](https://github.com/corpnewt/USBMap) or [Hackintool](https://github.com/headkaze/Hackintool) if you wish to create your own USB map. The ASMedia USB controller did not need a USB map.
 
 ![USB port map](opencore_asus_z170i_pro_gaming_usb_ports.jpg)
 
@@ -84,7 +86,7 @@ For USB mapping I enabled **ten** physical ports, and bluetooth. That is every p
 |  D   | USB 3.0 <sup>Type-A</sup> | HS06 + SS06                             | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               |                         |
 |  E   | USB 3.0 <sup>Type-A</sup> | HS07 + SS07                             | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               |                         |
 |  F   | USB 3.0 <sup>Type-A</sup> | HS08 + SS08                             | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               |                         |
-|  G   | Bluetooth                 | HS13                                    | ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                                                                                       |                         |
+|  G   | Bluetooth <sup>M.2</sup>  | HS13                                    | ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                                                                                       |                         |
 |  H   | USB 3.0 Header            | HS01 + SS01 &nbsp; / &nbsp; HS02 + SS02 | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd) &nbsp; / &nbsp; ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd) | _Front panel_           |
 |  I   | USB 2.0 Header            | HSxx + HSxx                             | ![No](https://dummyimage.com/11/808080/808080) + ![No](https://dummyimage.com/11/808080/808080)                                                                                                                                 | _PCI bracket *_         |
 |  J   | USB 3.1 <sup>Type-A</sup> | 1 + 3                                   | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               | _ASMedia controller **_ |
@@ -111,9 +113,17 @@ For audio layout i used **layout-ID 99**, it seemed most appropriate. Layout-ID 
 <sup>_* The only difference between these layouts is that layout99.xml has the key MaximumBootBeepValue, value 64. It also has the key DspFunction2 with various other keys and values._</sup>
 
 ## What works?
-Everything except sleep works. Wifi and bluetooth (by replacing the internal Qualcomm Atheros QCNFA364A), iGPU acceleration, HDMI audio, wake up from display sleep. Ethernet, all USB ports (only the internal USB 2.0 Header is disabled), all Audio ports. AirDrop, Handoff, iMessage, FaceTime and other iServices.
+Almost everything works. Wifi and bluetooth (by disabling and replacing the internal Qualcomm Atheros QCNFA364A), iGPU acceleration, dual displays, HDMI audio, ~~wake up from display sleep~~. Ethernet, all USB ports (only the internal USB 2.0 Header is disabled), all Audio ports. AirDrop/Handoff/Continuity, iMessage, FaceTime and other iServices.
 
 ## Known issues
+- [ ] Dual displays works kinda glitchy.
+
+<sup>_Main display is HDMI. Secondary display is DisplayPort. I need to unplug one display and then re-plug it before both displays gets recognized. Perhaps a deep dive in the [Intel iGPU patching](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/intel-patching/) guide will solve issue?_</sup>
+
+- [x] TRIM during boot takes a long while if it's activated.
+
+<sup>_Samsung SSD's are not macOS TRIM-supported. Fixed by setting key SetApfsTrimTimeout to 0. Build now boots instantaneously._</sup>
+
 - [ ] Sleep does not work.
 
 <sup>_Without a dGPU, sleep does not work. This build will never sleep though. Perhaps a deep dive in the [fixing sleep](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html) guide will solve issue?_</sup>
