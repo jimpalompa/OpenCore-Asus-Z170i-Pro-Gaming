@@ -118,7 +118,7 @@ Almost everything works. Wifi and bluetooth (by disabling and replacing the inte
 ## Known issues
 - [ ] Dual displays works kinda glitchy.
 
-<sup>_Main display is HDMI. Secondary display is DisplayPort. I need to unplug one display and then re-plug it before both displays gets recognized. Perhaps a deep dive in the [Intel iGPU patching](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/intel-patching/) guide will solve issue?_</sup>
+<sup>_Main display is HDMI. Secondary display is DisplayPort. I can't boot with both displays on and connected. I need to unplug the DP connected display and then re-plug it before both displays gets recognized. If I boot with DP connected, the HDMI video signal will not work, but the audio still works on HDMI strangely enough. Perhaps a deep dive in the [Intel iGPU patching](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/intel-patching/) guide will solve issue?_</sup>
 
 - [x] TRIM during boot takes a long while if it's activated.
 
