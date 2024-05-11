@@ -8,9 +8,9 @@ I'm releasing it here to reference my own configuration, and to share my EFI wit
 ![About this Mac](opencore_asus_z170i_pro_gaming_about_this_mac.jpg)
 
 ## Overview
-- This build runs on the integrated GPU alone, it has no dedicated GPU. If you are using a dGPU you need to read the [GPU support](https://dortania.github.io/OpenCore-Install-Guide/macos-limits.html#gpu-support) wiki.
+* This build runs on a dedicated GPU, alongside the integrated GPU, which is only used for computing tasks and does not drive a display. If you are not using a dGPU you need to follow the [GPU patching](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/) guide.
 - No beauty treatments were done in this build, that means no OpenCore GUI and no boot-chime. I want to keep everything simple and minimal. You can enable all of this by following the [beauty treatment](https://dortania.github.io/OpenCore-Post-Install/cosmetic/gui.html) guide.
-- Wireless card for bluetooth and wifi (Qualcomm Atheros QCNFA364A) is disabled and replaced. I'm using the fenvi T919 (BCM94360CD) card instead. If you wish to swap the wireless card, remember to read [wireless buyers guide](https://dortania.github.io/Wireless-Buyers-Guide/) first.
+- Wireless M.2 card for bluetooth and wifi (Qualcomm Atheros QCNFA364A) is disabled and replaced. I'm using the Broadcom BCM94360NG card instead. If you wish to swap the wireless card, remember to read [wireless buyers guide](https://dortania.github.io/Wireless-Buyers-Guide/) first.
 
 ## Hardware
 Remember to read the [anti-hackintosh buyers guide](https://dortania.github.io/Anti-Hackintosh-Buyers-Guide/) if you're planning on buying components for a new build.
@@ -21,11 +21,11 @@ Remember to read the [anti-hackintosh buyers guide](https://dortania.github.io/A
 | CPU         | Intel          | Core i5 6600K 3,5GHz                                      | [VirtualSMC](https://github.com/acidanthera/VirtualSMC)                                                   | _Skylake_       |
 | RAM         | Corsair        | Vengeance LPX DDR4 3000MHz 8GB <sup>x2</sup>              | built-in                                                                                                  |                 |
 | iGPU        | Intel          | HD Graphics 530                                           | [WhateverGreen](https://github.com/acidanthera/WhateverGreen)                                             | _Headless mode_ |
-| dGPU        | -              | -                                                         |                                                                                                           |                 |
+| dGPU        | Gigabyte       | RX 580 GAMING 8GB                                         | [WhateverGreen](https://github.com/acidanthera/WhateverGreen)                                             |                 |
 | SSD         | Intel          | 970 EVO 500GB M.2 <sup>x1</sup>                           | [NVMeFix](https://github.com/acidanthera/NVMeFix)                                                         |                 |
 | HDD         | WD             | Red 3TB 3.5" <sup>x1</sup> <br>Red 4TB 3.5" <sup>x3</sup> | built-in                                                                                                  |                 |
-| Bluetooth   | fenvi          | T919                                                      | built-in                                                                                                  | _Replaced_      |
-| Wifi        | fenvi          | T919                                                      | built-in                                                                                                  | _Replaced_      |
+| Bluetooth   | Broadcom       | BCM94360NG                                                | built-in                                                                                                  | _Replaced_      |
+| Wifi        | Broadcom       | BCM94360NG                                                | built-in                                                                                                  | _Replaced_      |
 | Ethernet    | Intel          | I219-V                                                    | [IntelMausi](https://github.com/acidanthera/IntelMausi)                                                   |                 |
 | Audio       | Realtek        | ALC1150                                                   | [AppleALC](https://github.com/acidanthera/AppleALC)                                                       | _Layout-ID 99_  |
 | PSU         | EVGA           | SuperNOVA G2 650W                                         |                                                                                                           |                 |
@@ -47,16 +47,17 @@ Begin by loading optimized default options, then make sure settings are as below
 | `CPU Configuration >` <br>`CPU - Power Management`   | CFG Lock                                 | Disabled          | _**Recommended \***_             |
 | `System Agent Config`                                | VT-d                                     | Disabled          | _**Recommended \***_             |
 | `System Agent Config`                                | Above 4G Decoding                        | Enabled           | _**Recommended \***_             |
-| `System Agent Config >` <br>`Graphics Configuration` | Primary Display                          | CPU Graphics      | _This build has no dGPU_         |
-| `System Agent Config >` <br>`Graphics Configuration` | iGPU-Multi-Monitor                       | Disabled          | _This build has no dGPU_         |
+| `System Agent Config >` <br>`Graphics Configuration` | Primary Display                          | PCIE              | _This build has a dGPU_          |
+| `System Agent Config >` <br>`Graphics Configuration` | iGPU-Multi-Monitor                       | Enabled           | _This build has a dGPU_          |
+| `System Agent Config >` <br>`Graphics Configuration` | RC6(Render Standby)                      | Auto              | _This build has a dGPU_          |
 | `System Agent Config >` <br>`Graphics Configuration` | DVMT Pre-Allocated                       | 64M               | _**Recommended \***_             |
 | `PCH Configuration`                                  | IOAPIC 24-119 Entries                    | Enabled           |                                  |
 | `PCH Storage Config`                                 | SATA Mode Selection                      | AHCI              | _**Recommended \***_             |
 | `Onboard Devices Config`                             | SupremeFX LED Lighting                   | Disabled          | _Personal preference_            |
 | `Onboard Devices Config`                             | Asmedia USB 3.1 Controller               | Enabled           |                                  |
 | `Onboard Devices Config`                             | Asmedia USB 3.1 Battery Charging Support | Enabled           | _Personal preference_            |
-| `Onboard Devices Config`                             | Wi-Fi Controller                         | Disabled          | _Replaced by PCI card_           |
-| `Onboard Devices Config`                             | Bluetooth Controller                     | Disabled          | _Replaced by PCI card_           |
+| `Onboard Devices Config`                             | Wi-Fi Controller                         | Enabled           |                                  |
+| `Onboard Devices Config`                             | Bluetooth Controller                     | Enabled           |                                  |
 | `APM Configuration`                                  | Restore AC Power Loss                    | Power On          | _Personal preference_            |
 | `APM Configuration`                                  | Power On By PCI-E                        | Enabled           |                                  |
 | `Network Stack Config`                               | Network Stack                            | Disabled          |                                  |
@@ -116,17 +117,13 @@ For audio layout i used **layout-ID 99**, it seemed most appropriate. Layout-ID 
 Almost everything works. Wifi and bluetooth (by disabling and replacing the internal Qualcomm Atheros QCNFA364A), iGPU acceleration, dual displays, HDMI audio, ~~wake up from display sleep~~. Ethernet, all USB ports (only the internal USB 2.0 Header is disabled), all Audio ports. AirDrop/Handoff/Continuity, iMessage, FaceTime and other iServices.
 
 ## Known issues
-- [ ] Dual displays works kinda glitchy.
-
-<sup>_Main display is HDMI. Secondary display is DisplayPort. I can't boot with both displays on and connected. I need to unplug the DP connected display and then re-plug it before both displays gets recognized. If I boot with DP connected, the HDMI video signal will not work, but the audio still works on HDMI strangely enough. Perhaps a deep dive in the [Intel iGPU patching](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/intel-patching/) guide will solve issue?_</sup>
-
 - [x] TRIM during boot takes a long while if it's activated.
 
 <sup>_Samsung SSD's are not macOS TRIM-supported. Fixed by setting key SetApfsTrimTimeout to 0. Build now boots instantaneously._</sup>
 
 - [ ] Sleep does not work.
 
-<sup>_Without a dGPU, sleep does not work. This build will never sleep though. Perhaps a deep dive in the [fixing sleep](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html) guide will solve issue?_</sup>
+<sup>_This build will never sleep though. Perhaps a deep dive in the [fixing sleep](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html) guide will solve issue?_</sup>
 
 ## Extras
 
