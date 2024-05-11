@@ -10,7 +10,7 @@ I'm releasing it here to reference my own configuration, and to share my EFI wit
 ## Overview
 * This build runs on a dedicated GPU, alongside the integrated GPU, which is only used for computing tasks and does not drive a display. If you are not using a dGPU you need to follow the [GPU patching](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/) guide.
 - No beauty treatments were done in this build, that means no OpenCore GUI and no boot-chime. I want to keep everything simple and minimal. You can enable all of this by following the [beauty treatment](https://dortania.github.io/OpenCore-Post-Install/cosmetic/gui.html) guide.
-- Wireless M.2 card for bluetooth and wifi (Qualcomm Atheros QCNFA364A) is disabled and replaced. I'm using the Broadcom BCM94360NG card instead. If you wish to swap the wireless card, remember to read [wireless buyers guide](https://dortania.github.io/Wireless-Buyers-Guide/) first.
+- Wireless M.2 card for bluetooth and wifi (Qualcomm Atheros QCNFA364A) is replaced. I'm using the Broadcom BCM94360NG card instead. If you wish to swap the wireless card, remember to read [wireless buyers guide](https://dortania.github.io/Wireless-Buyers-Guide/) first.
 
 ## Hardware
 Remember to read the [anti-hackintosh buyers guide](https://dortania.github.io/Anti-Hackintosh-Buyers-Guide/) if you're planning on buying components for a new build.
