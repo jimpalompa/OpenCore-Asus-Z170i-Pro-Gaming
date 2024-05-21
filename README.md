@@ -1,4 +1,4 @@
-# OpenCore Asus Z170i Pro Gaming + Gigabyte RX 580
+# OpenCore Asus Z170i Pro Gaming + RX 580
 An OpenCore EFI for Asus Z170i Pro Gaming mini-ITX motherboard, with Skylake processor. See compatible macOS versions in my releases. I'm using this build as a server. It is my third hackintosh build so far.
 
 Though this is a ready to use EFI, it is for my own system, so **use at your own risk**. I truly recommend everyone to read [Dortania's OpenCore install guide](https://dortania.github.io/OpenCore-Install-Guide/). It's comprehensive, but take your time and have patience, there are no shortcuts to a perfect build.
@@ -31,7 +31,7 @@ Remember to read the [anti-hackintosh buyers guide](https://dortania.github.io/A
 | PSU         | EVGA           | SuperNOVA G2 650W                                         |                                                                                                           |                 |
 | Case        | Fractal Design | Node 304                                                  |                                                                                                           |                 |
 | CPU cooler  | Cryorig        | H7                                                        |                                                                                                           |                 |
-| Display     | EVanlak        | Sony XR50X93J 50" <br>P2422H 24"                          |                                                                                                           |                 |
+| Display     | EVanlak        | Sony XR50X93J 50" <br>P2222H 22"                          |                                                                                                           |                 |
 
 ## BIOS setup
 Begin by loading optimized default options, then make sure settings are as below.
