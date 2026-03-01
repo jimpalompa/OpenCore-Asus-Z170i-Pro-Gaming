@@ -170,6 +170,7 @@ Apple for macOS<br>
 [Acidanthera](https://github.com/acidanthera) for OpenCore<br>
 [dortania](https://github.com/dortania) for guide<br>
 [CorpNewt](https://github.com/corpnewt) for software<br>
+[OpenIntelWireless](https://github.com/OpenIntelWireless) for drivers<br>
+[khronokernel](https://github.com/khronokernel) for drivers<br>
 [headkaze](https://github.com/headkaze) for Hackintool<br>
-[xzhih](https://github.com/xzhih) for HiDPI<br>
 And everyone from the OpenCore community 🖤
