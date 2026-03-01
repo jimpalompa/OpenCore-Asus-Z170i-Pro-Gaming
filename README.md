@@ -19,13 +19,13 @@ Remember to read the [anti-hackintosh buyers guide](https://dortania.github.io/A
 | ----------- | -------------- | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------- |
 | Motherboard | Asus           | Z170i Pro Gaming                                          | [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg) <br>[Lilu](https://github.com/acidanthera/Lilu) |                 |
 | CPU         | Intel          | Core i5 6600K 3,5GHz                                      | [VirtualSMC](https://github.com/acidanthera/VirtualSMC)                                                   | _Skylake_       |
-| RAM         | Corsair        | Vengeance LPX DDR4 3000MHz 8GB <sup>x2</sup>              | built-in                                                                                                  |                 |
+| RAM         | Corsair        | Vengeance LPX DDR4 3000MHz 8GB <sup>x2</sup>              | native                                                                                                    |                 |
 | iGPU        | Intel          | HD Graphics 530                                           | [WhateverGreen](https://github.com/acidanthera/WhateverGreen)                                             | _Headless mode_ |
 | dGPU        | Gigabyte       | RX 580 GAMING 8GB                                         | [WhateverGreen](https://github.com/acidanthera/WhateverGreen)                                             |                 |
 | SSD         | Intel          | 970 EVO 500GB M.2 <sup>x1</sup>                           | [NVMeFix](https://github.com/acidanthera/NVMeFix)                                                         |                 |
-| HDD         | WD             | Red 3TB 3.5" <sup>x1</sup> <br>Red 4TB 3.5" <sup>x3</sup> | built-in                                                                                                  |                 |
-| Bluetooth   | Broadcom       | BCM94360NG <sup>v4.0</sup>                                | built-in                                                                                                  | _Replaced_      |
-| Wifi        | Broadcom       | BCM94360NG <sup>802.11ac</sup>                            | built-in                                                                                                  | _Replaced_      |
+| HDD         | WD             | Red 3TB 3.5" <sup>x1</sup> <br>Red 4TB 3.5" <sup>x3</sup> | native                                                                                                    |                 |
+| Bluetooth   | Broadcom       | BCM94360NG <sup>v4.0</sup>                                | native                                                                                                    | _Replaced_      |
+| Wifi        | Broadcom       | BCM94360NG <sup>802.11ac</sup>                            | native                                                                                                    | _Replaced_      |
 | Ethernet    | Intel          | I219-V                                                    | [IntelMausi](https://github.com/acidanthera/IntelMausi)                                                   |                 |
 | Audio       | Realtek        | ALC1150                                                   | [AppleALC](https://github.com/acidanthera/AppleALC)                                                       | _Layout-ID 99_  |
 | PSU         | EVGA           | SuperNOVA G2 650W                                         |                                                                                                           |                 |
@@ -117,10 +117,6 @@ For audio layout i used **layout-ID 99**, it seemed most appropriate. Layout-ID 
 Almost everything works. Wifi and bluetooth (by disabling and replacing the internal Qualcomm Atheros QCNFA364A), iGPU acceleration, dual displays, HDMI audio, ~~wake up from display sleep~~. Ethernet, all USB ports (only the internal USB 2.0 Header is disabled), all Audio ports. AirDrop/Handoff/Continuity, iMessage, FaceTime and other iServices.
 
 ## Known issues
-- [x] TRIM during boot takes a long while if it's activated.
-
-<sup>_Samsung SSD's are not macOS TRIM-supported. Fixed by setting key SetApfsTrimTimeout to 0. Build now boots instantaneously._</sup>
-
 - [ ] Sleep does not work.
 
 <sup>_This build will never sleep though. Perhaps a deep dive in the [fixing sleep](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html) guide will solve issue?_</sup>
