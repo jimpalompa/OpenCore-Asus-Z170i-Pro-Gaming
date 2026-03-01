@@ -114,12 +114,10 @@ For audio layout i used **layout-ID 99**, it seemed most appropriate. Layout-ID 
 <sup>_* The only difference between these layouts is that layout99.xml has the key MaximumBootBeepValue, value 64. It also has the key DspFunction2 with various other keys and values._</sup>
 
 ## What works?
-Almost everything works. Wifi and bluetooth (by disabling and replacing the internal Qualcomm Atheros QCNFA364A), iGPU acceleration, dual displays, HDMI audio, ~~wake up from display sleep~~. Ethernet, all USB ports (only the internal USB 2.0 Header is disabled), all Audio ports. AirDrop/Handoff/Continuity, iMessage, FaceTime and other iServices.
+Everything works. Wifi and bluetooth (by disabling and replacing the internal Qualcomm Atheros QCNFA364A), iGPU acceleration, dual displays, HDMI audio, wake up from display sleep. Ethernet, all USB ports (only the internal USB 2.0 Header is disabled), all Audio ports. AirDrop/Handoff/Continuity, iMessage, FaceTime and other iServices.
 
 ## Known issues
-- [ ] Sleep does not work.
-
-<sup>_This build will never sleep though. Perhaps a deep dive in the [fixing sleep](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html) guide will solve issue?_</sup>
+–
 
 ## Extras
 
