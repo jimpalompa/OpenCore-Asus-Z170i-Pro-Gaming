@@ -1,16 +1,16 @@
 # OpenCore Asus Z170i Pro Gaming + RX 580
-An OpenCore EFI for Asus Z170i Pro Gaming mini-ITX motherboard, with Skylake processor. See compatible macOS versions in my releases. I'm using this build as a server. It is my third hackintosh build so far.
+An OpenCore EFI for Asus Z170i Pro Gaming mini-ITX motherboard, with Skylake processor. See compatible macOS version in release. This is my third OpenCore build so far. Used as media server.
 
-Though this is a ready to use EFI, it is for my own system, so **use at your own risk**. I truly recommend everyone to read [Dortania's OpenCore install guide](https://dortania.github.io/OpenCore-Install-Guide/). It's comprehensive, but take your time and have patience, there are no shortcuts to a perfect build.
+Though this is a "ready to use" EFI, it is for my own system, so **use at your own risk**. I recommend everyone to read [Dortania's OpenCore install guide](https://dortania.github.io/OpenCore-Install-Guide/). It's comprehensive, but take your time and have patience, there are no shortcuts to a perfect build.
 
-I'm releasing it here to reference my own configuration, and to share my EFI with others, for a little help on the way. I will not publish releases every time I update OpenCore and drivers, but I will try to publish if I have enough spare time. **Do not forget** to [generate SMBIOS info](https://dortania.github.io/OpenCore-Install-Guide/config.plist/skylake.html#platforminfo) if you are planning on using this EFI in your build, since my releases does not include this information, for obvious reasons.
+I'm publishing releases here to reference my own configurations and to share my EFI with others, for a little help on the way. With that said, I will probably not publish a release every time I update my OpenCore build. **Do not forget** to [generate SMBIOS info](https://dortania.github.io/OpenCore-Install-Guide/config.plist/coffee-lake.html#platforminfo) if you are planning on using this EFI in your build, since my releases does not include this information, for obvious reasons.
 
 ![About this Mac](opencore_asus_z170i_pro_gaming_about_this_mac.jpg)
 
 ## Overview
-* This build runs on a dedicated GPU, alongside the integrated GPU, which is only used for computing tasks and does not drive a display. If you are not using a dGPU you need to follow the [GPU patching](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/) guide.
+- This build runs on a dedicated GPU, alongside the integrated GPU, which is only used for computing tasks and does not drive a display. If you are not using a dGPU you need to follow the [GPU patching](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/) guide.
 - No beauty treatments were done in this build, that means no OpenCore GUI and no boot-chime. I want to keep everything simple and minimal. You can enable all of this by following the [beauty treatment](https://dortania.github.io/OpenCore-Post-Install/cosmetic/gui.html) guide.
-- Wireless M.2 card for bluetooth and wifi (Qualcomm Atheros QCNFA364A) is replaced. I'm using the Broadcom BCM94360NG card instead. If you wish to swap the wireless card, remember to read [wireless buyers guide](https://dortania.github.io/Wireless-Buyers-Guide/) first.
+- Wireless card for bluetooth and wifi (Qualcomm Atheros QCNFA364A) is replaced. I'm using the Broadcom BCM94360NG card instead. If you wish to swap the wireless card, remember to read [wireless buyers guide](https://dortania.github.io/Wireless-Buyers-Guide/) first.
 
 ## Hardware
 Remember to read the [anti-hackintosh buyers guide](https://dortania.github.io/Anti-Hackintosh-Buyers-Guide/) if you're planning on buying components for a new build.
@@ -22,16 +22,16 @@ Remember to read the [anti-hackintosh buyers guide](https://dortania.github.io/A
 | RAM         | Corsair        | Vengeance LPX DDR4 3000MHz 8GB <sup>x2</sup>              | native                                                                                                    |                 |
 | iGPU        | Intel          | HD Graphics 530                                           | [WhateverGreen](https://github.com/acidanthera/WhateverGreen)                                             | _Headless mode_ |
 | dGPU        | Gigabyte       | RX 580 GAMING 8GB                                         | [WhateverGreen](https://github.com/acidanthera/WhateverGreen)                                             |                 |
-| SSD         | Intel          | 970 EVO 500GB M.2 <sup>x1</sup>                           | [NVMeFix](https://github.com/acidanthera/NVMeFix)                                                         |                 |
+| SSD         | Sandisk        | WD_BLACK SN850X NVMe M.2 <sup>x1</sup>                    | native                                                                                                    |                 |
 | HDD         | WD             | Red 3TB 3.5" <sup>x1</sup> <br>Red 4TB 3.5" <sup>x3</sup> | native                                                                                                    |                 |
-| Bluetooth   | Broadcom       | BCM94360NG <sup>v4.0</sup>                                | native                                                                                                    | _Replaced_      |
 | Wifi        | Broadcom       | BCM94360NG <sup>802.11ac</sup>                            | native                                                                                                    | _Replaced_      |
+| Bluetooth   | Broadcom       | BCM94360NG <sup>v4.0</sup>                                | native                                                                                                    | _Replaced_      |
 | Ethernet    | Intel          | I219-V                                                    | [IntelMausi](https://github.com/acidanthera/IntelMausi)                                                   |                 |
 | Audio       | Realtek        | ALC1150                                                   | [AppleALC](https://github.com/acidanthera/AppleALC)                                                       | _Layout-ID 99_  |
-| PSU         | EVGA           | SuperNOVA G2 650W                                         |                                                                                                           |                 |
+| PSU         | Corsair        | SF750 750W                                                |                                                                                                           |                 |
 | Case        | Fractal Design | Node 304                                                  |                                                                                                           |                 |
 | CPU cooler  | Cryorig        | H7                                                        |                                                                                                           |                 |
-| Display     | EVanlak        | Sony XR50X93J 50" <br>P2222H 22"                          |                                                                                                           |                 |
+| Display     | Sony <br>Dell  | XR50X93J 50" <br>P2222H 22"                               |                                                                                                           |                 |
 
 ## BIOS setup
 Begin by loading optimized default options, then make sure settings are as below.
@@ -81,17 +81,17 @@ For USB mapping I enabled **ten** physical ports, and bluetooth <sup>M.2</sup>. 
 
 | Port | Type                      | Name                                    | Enabled                                                                                                                                                                                                                                     | Comment                 |
 | :--: | ------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- |
-|  A   | USB 2.0 <sup>Type-A</sup> | HS09                                    | ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                                                                                       |                         |
-|  B   | USB 2.0 <sup>Type-A</sup> | HS10                                    | ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                                                                                       |                         |
-|  C   | USB 3.0 <sup>Type-A</sup> | HS05 + SS05                             | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               |                         |
-|  D   | USB 3.0 <sup>Type-A</sup> | HS06 + SS06                             | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               |                         |
-|  E   | USB 3.0 <sup>Type-A</sup> | HS07 + SS07                             | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               |                         |
-|  F   | USB 3.0 <sup>Type-A</sup> | HS08 + SS08                             | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               |                         |
-|  G   | Bluetooth <sup>M.2</sup>  | HS13                                    | ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                                                                                       |                         |
-|  H   | USB 3.0 Header            | HS01 + SS01 &nbsp; / &nbsp; HS02 + SS02 | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd) &nbsp; / &nbsp; ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd) | _Front panel_           |
-|  I   | USB 2.0 Header            | HSxx + HSxx                             | ![No](https://dummyimage.com/11/808080/808080) + ![No](https://dummyimage.com/11/808080/808080)                                                                                                                                 | _PCI bracket *_         |
-|  J   | USB 3.1 <sup>Type-A</sup> | 1 + 3                                   | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               | _ASMedia controller **_ |
-|  K   | USB 3.1 <sup>Type-A</sup> | 2 + 4                                   | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               | _ASMedia controller **_ |
+| A    | USB 2.0 <sup>Type-A</sup> | HS09                                    | ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                                                                                       |                         |
+| B    | USB 2.0 <sup>Type-A</sup> | HS10                                    | ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                                                                                       |                         |
+| C    | USB 3.0 <sup>Type-A</sup> | HS05 + SS05                             | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               |                         |
+| D    | USB 3.0 <sup>Type-A</sup> | HS06 + SS06                             | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               |                         |
+| E    | USB 3.0 <sup>Type-A</sup> | HS07 + SS07                             | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               |                         |
+| F    | USB 3.0 <sup>Type-A</sup> | HS08 + SS08                             | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               |                         |
+| G    | Bluetooth <sup>M.2</sup>  | HS13                                    | ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                                                                                       |                         |
+| H    | USB 3.0 Header            | HS01 + SS01 &nbsp; / &nbsp; HS02 + SS02 | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd) &nbsp; / &nbsp; ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd) | _Front panel_           |
+| I    | USB 2.0 Header            | HSxx + HSxx                             | ![No](https://dummyimage.com/11/808080/808080) + ![No](https://dummyimage.com/11/808080/808080)                                                                                                                                 | _PCI bracket *_         |
+| J    | USB 3.1 <sup>Type-A</sup> | 1 + 3                                   | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               | _ASMedia controller **_ |
+| K    | USB 3.1 <sup>Type-A</sup> | 2 + 4                                   | ![Yes](https://dummyimage.com/11/0000fd/0000fd) + ![Yes](https://dummyimage.com/11/0000fd/0000fd)                                                                                                                               | _ASMedia controller **_ |
 
 <sup>_* I have no PCI bracket for the USB 2.0 Header, so I could not recognize the names for those ports._</sup><br>
 <sup>_** This is the second USB controller and has its own port limit. No need for USB map on this controller._</sup>
@@ -126,27 +126,26 @@ Everything works. Wifi and bluetooth (by disabling and replacing the internal Qu
   <summary>Quick guide on how to debug OpenCore with my releases.</summary>
   <br>
 
-My releases are prepared for easy dubugging, all you have to do is download the DEBUG version of [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg). Reminder, it's a good idea booting the debug EFI from a USB stick.
+  My releases are prepared for easy dubugging, all you have to do is download the DEBUG version of [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg). Reminder, it's a good idea booting the debug EFI from a USB stick.
 
-**Swap the following files:**
+  **Swap the following files:**
 
-EFI > BOOT > `BOOTx64.efi`<br>
-EFI > OC > `OpenCore.efi`<br>
-EFI > OC > Drivers > `OpenRuntime.efi`
+  EFI > BOOT > `BOOTx64.efi`<br>
+  EFI > OC > `OpenCore.efi`<br>
+  EFI > OC > Drivers > `OpenRuntime.efi`
 
-**Change to the following values in** `config.plist`**:**
+  **Change to the following values in** `config.plist`**:**
 
-Misc > Debug > AppleDebug > `True`<br>
-Misc > Debug > ApplePanic > `True`<br>
-Misc > Debug > DisableWatchDog > `True`<br>
-Misc > Debug > Target > `67`<br>
-NVRAM > Add > 7C436110-AB2A-4BBB-A880-FE41995C9F82 > boot-args > `-v keepsyms=1`
+  Misc > Debug > AppleDebug > `True`<br>
+  Misc > Debug > ApplePanic > `True`<br>
+  Misc > Debug > DisableWatchDog > `True`<br>
+  Misc > Debug > Target > `67`<br>
+  NVRAM > Add > 7C436110-AB2A-4BBB-A880-FE41995C9F82 > boot-args > `-v keepsyms=1`
 
-Restart computer and make sure you boot from the same volume you made the changes in. Verbose mode is now active and log files will be saved to the same volume. When you're done and everything works, swap back files from the RELEASE version and revert the values in config.plist.
+  Restart computer and make sure you boot from the same volume you made the changes in. Verbose mode is now active and log files will be saved to the same volume. When you're done and everything works, swap back files from the RELEASE version and revert the values in config.plist.
 
-<sup>_**Reference: https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/debug.html**_</sup>
-<br>
-
+  <sup>_**Reference: https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/debug.html**_</sup>
+  <br>
 </details>
 
 ### Quick Reference Guide
@@ -171,4 +170,4 @@ Apple for macOS<br>
 [OpenIntelWireless](https://github.com/OpenIntelWireless) for drivers<br>
 [khronokernel](https://github.com/khronokernel) for drivers<br>
 [headkaze](https://github.com/headkaze) for Hackintool<br>
-And everyone from the OpenCore community 🖤
+And everyone from the OpenCore community 💙
