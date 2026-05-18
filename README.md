@@ -38,39 +38,39 @@ Begin by loading optimized default options, then make sure settings are as below
 
 **Version 3805**
 
-| Menu                                                 | Name                                     | Option            | Comment                          |
-| ---------------------------------------------------- | ---------------------------------------- | ----------------- | -------------------------------- |
-| **Exit**                                             | Load Optimized Defaults                  | Ok                | _Begin with default settings_    |
-| **Ai Tweaker**                                       | Ai Overclock Tuner                       | XMP               | _Personal preference_            |
-| **Advanced** <br>`CPU Configuration`                 | Intel Virtualization Technology          | Enabled           | _**Recommended \***_             |
-| `CPU Configuration`                                  | SW Guard Extensions (SGX)                | Disabled          | _**Recommended \***_             |
-| `CPU Configuration >` <br>`CPU - Power Management`   | CFG Lock                                 | Disabled          | _**Recommended \***_             |
-| `System Agent Config`                                | VT-d                                     | Disabled          | _**Recommended \***_             |
-| `System Agent Config`                                | Above 4G Decoding                        | Enabled           | _**Recommended \***_             |
-| `System Agent Config >` <br>`Graphics Configuration` | Primary Display                          | PCIE              | _This build has a dGPU_          |
-| `System Agent Config >` <br>`Graphics Configuration` | iGPU-Multi-Monitor                       | Enabled           | _This build has a dGPU_          |
-| `System Agent Config >` <br>`Graphics Configuration` | RC6(Render Standby)                      | Auto              | _This build has a dGPU_          |
-| `System Agent Config >` <br>`Graphics Configuration` | DVMT Pre-Allocated                       | 64M               | _**Recommended \***_             |
-| `PCH Configuration`                                  | IOAPIC 24-119 Entries                    | Enabled           |                                  |
-| `PCH Storage Config`                                 | SATA Mode Selection                      | AHCI              | _**Recommended \***_             |
-| `Onboard Devices Config`                             | SupremeFX LED Lighting                   | Disabled          | _Personal preference_            |
-| `Onboard Devices Config`                             | Asmedia USB 3.1 Controller               | Enabled           |                                  |
-| `Onboard Devices Config`                             | Asmedia USB 3.1 Battery Charging Support | Enabled           | _Personal preference_            |
-| `Onboard Devices Config`                             | Wi-Fi Controller                         | Enabled           |                                  |
-| `Onboard Devices Config`                             | Bluetooth Controller                     | Enabled           |                                  |
-| `APM Configuration`                                  | Restore AC Power Loss                    | Power On          | _Personal preference_            |
-| `APM Configuration`                                  | Power On By PCI-E                        | Enabled           |                                  |
-| `Network Stack Config`                               | Network Stack                            | Disabled          |                                  |
-| `USB Configuration`                                  | Legacy USB Support                       | Enabled           |                                  |
-| **Boot**                                             | Fast Boot                                | Disabled          | _**Recommended \***_             |
-| `Boot Configuration`                                 | POST Delay Time                          | 0 sec             | _Personal preference_            |
-| `Boot Configuration`                                 | Wait For 'F1' If Error                   | Disabled          | _Personal preference_            |
-| `Boot Configuration`                                 | Setup Mode                               | Advanced Mode     | _Personal preference_            |
-| `CSM (Compatibility Support Module)`                 | Launch CSM                               | Disabled          | _**Recommended \***_             |
-| `Secure Boot`                                        | Secure Boot state                        | Disabled          | _**Recommended \***_             |
-| `Secure Boot`                                        | OS Type                                  | Windows UEFI mode | _**Recommended \***_             |
-|                                                      | Boot Option #1                           | UEFI OS           | _Disable all other boot options_ |
-| **Exit**                                             | Save Changes & Reset                     | Ok                | _Save BIOS and reset_            |
+| Menu                                                 | Name                                     | Option            | Comment                                |
+| ---------------------------------------------------- | ---------------------------------------- | ----------------- | -------------------------------------- |
+| **Exit**                                             | Load Optimized Defaults                  | Ok                | _Begin with default settings_          |
+| **Ai Tweaker**                                       | Ai Overclock Tuner                       | XMP               | _Personal preference_                  |
+| **Advanced** <br>`CPU Configuration`                 | Intel Virtualization Technology          | Enabled           | _**Recommended \***_                   |
+| `CPU Configuration`                                  | SW Guard Extensions (SGX)                | Disabled          | _**Recommended \***_                   |
+| `CPU Configuration >` <br>`CPU - Power Management`   | CFG Lock                                 | Disabled          | _**Recommended \***_                   |
+| `System Agent Config`                                | VT-d                                     | Disabled          | _**Recommended \***_                   |
+| `System Agent Config`                                | Above 4G Decoding                        | Enabled           | _**Recommended \***_                   |
+| `System Agent Config >` <br>`Graphics Configuration` | Primary Display                          | PCIE              | _This build has a dGPU_                |
+| `System Agent Config >` <br>`Graphics Configuration` | iGPU-Multi-Monitor                       | Enabled           | _This build has a dGPU_                |
+| `System Agent Config >` <br>`Graphics Configuration` | RC6(Render Standby)                      | Auto              | _This build has a dGPU_                |
+| `System Agent Config >` <br>`Graphics Configuration` | DVMT Pre-Allocated                       | 64M               | _**Recommended \***_                   |
+| `PCH Configuration`                                  | IOAPIC 24-119 Entries                    | Enabled           |                                        |
+| `PCH Storage Config`                                 | SATA Mode Selection                      | AHCI              | _**Recommended \***_                   |
+| `Onboard Devices Config`                             | SupremeFX LED Lighting                   | Disabled          | _Personal preference_                  |
+| `Onboard Devices Config`                             | Asmedia USB 3.1 Controller               | Enabled           |                                        |
+| `Onboard Devices Config`                             | Asmedia USB 3.1 Battery Charging Support | Enabled           | _Personal preference_                  |
+| `Onboard Devices Config`                             | Wi-Fi Controller                         | Enabled           |                                        |
+| `Onboard Devices Config`                             | Bluetooth Controller                     | Enabled           |                                        |
+| `APM Configuration`                                  | Restore AC Power Loss                    | Power On          | _Personal preference_                  |
+| `APM Configuration`                                  | Power On By PCI-E                        | Enabled           |                                        |
+| `Network Stack Config`                               | Network Stack                            | Disabled          |                                        |
+| `USB Configuration`                                  | Legacy USB Support                       | Enabled           |                                        |
+| **Boot**                                             | Fast Boot                                | Disabled          | _**Recommended \***_                   |
+| `Boot Configuration`                                 | POST Delay Time                          | 0 sec             | _Personal preference_                  |
+| `Boot Configuration`                                 | Wait For 'F1' If Error                   | Disabled          | _Personal preference_                  |
+| `Boot Configuration`                                 | Setup Mode                               | Advanced Mode     | _Personal preference_                  |
+| `CSM (Compatibility Support Module)`                 | Launch CSM                               | Disabled          | _**Recommended \***_                   |
+| `Secure Boot`                                        | Secure Boot state                        | Disabled          | _**Recommended \***_                   |
+| `Secure Boot`                                        | OS Type                                  | Windows UEFI mode | _**Recommended \***_                   |
+|                                                      | Boot Option #1                           | OpenCore          | _Disable other boot options if needed_ |
+| **Exit**                                             | Save Changes & Reset                     | Ok                | _Save BIOS and reset_                  |
 
 <sup>_* As recommended in OpenCore install guide, [Skylake: Intel BIOS settings](https://dortania.github.io/OpenCore-Install-Guide/config.plist/skylake.html#intel-bios-settings)._</sup>
 
