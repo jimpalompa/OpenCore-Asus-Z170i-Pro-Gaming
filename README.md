@@ -8,30 +8,32 @@ I'm publishing releases here to reference my own configurations and to share my 
 ![About this Mac](opencore_asus_z170i_pro_gaming_about_this_mac.jpg)
 
 ## Overview
+- This build runs macOS Ventura natively, without OpenCore Legacy Patcher, using SMBIOS `iMac18,3`. macOS Ventura dropped support for Skylake graphics and for iMac17,1, so the SMBIOS is set to the closest supported Kaby Lake iMac (Polaris dGPU + headless iGPU). Ventura is also the last macOS version where the Broadcom BCM94360NG wireless card is supported natively.
 - This build runs on a dedicated GPU, alongside the integrated GPU, which is only used for computing tasks and does not drive a display. If you are not using a dGPU you need to follow the [GPU patching](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/) guide.
-- No beauty treatments were done in this build, that means no OpenCore GUI and no boot-chime. I want to keep everything simple and minimal. You can enable all of this by following the [beauty treatment](https://dortania.github.io/OpenCore-Post-Install/cosmetic/gui.html) guide.
+- The Skylake HD Graphics 530 is spoofed as a Kaby Lake HD Graphics 630 for macOS Ventura (`device-id` `1B590000`, headless `AAPL,ig-platform-id` `03001259`). A headless iGPU does not show up in System Information or in Activity Monitor's GPU History, which is expected.
+- No beauty treatments were done in this build, that means no OpenCore GUI and no boot-chime. I want to keep everything lean, simple and minimal. You can enable all of this by following the [beauty treatment](https://dortania.github.io/OpenCore-Post-Install/cosmetic/gui.html) guide.
 - Wireless card for bluetooth and wifi (Qualcomm Atheros QCNFA364A) is replaced. I'm using the Broadcom BCM94360NG card instead. If you wish to swap the wireless card, remember to read [wireless buyers guide](https://dortania.github.io/Wireless-Buyers-Guide/) first.
 
 ## Hardware
 Remember to read the [anti-hackintosh buyers guide](https://dortania.github.io/Anti-Hackintosh-Buyers-Guide/) if you're planning on buying components for a new build.
 
-| Item        | Brand          | Model                                                     | Driver                                                                                                    | Comment         |
-| ----------- | -------------- | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------- |
-| Motherboard | Asus           | Z170i Pro Gaming                                          | [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg) <br>[Lilu](https://github.com/acidanthera/Lilu) |                 |
-| CPU         | Intel          | Core i5 6600K 3,5GHz                                      | [VirtualSMC](https://github.com/acidanthera/VirtualSMC)                                                   | _Skylake_       |
-| RAM         | Corsair        | Vengeance LPX DDR4 3000MHz 8GB <sup>x2</sup>              | native                                                                                                    |                 |
-| iGPU        | Intel          | HD Graphics 530                                           | [WhateverGreen](https://github.com/acidanthera/WhateverGreen)                                             | _Headless mode_ |
-| dGPU        | Gigabyte       | RX 580 GAMING 8GB                                         | [WhateverGreen](https://github.com/acidanthera/WhateverGreen)                                             |                 |
-| SSD         | Sandisk        | WD_BLACK SN850X NVMe M.2 <sup>x1</sup>                    | native                                                                                                    |                 |
-| HDD         | WD             | Red 3TB 3.5" <sup>x1</sup> <br>Red 4TB 3.5" <sup>x3</sup> | native                                                                                                    |                 |
-| Wifi        | Broadcom       | BCM94360NG <sup>802.11ac</sup>                            | native                                                                                                    | _Replaced_      |
-| Bluetooth   | Broadcom       | BCM94360NG <sup>v4.0</sup>                                | native                                                                                                    | _Replaced_      |
-| Ethernet    | Intel          | I219-V                                                    | [IntelMausi](https://github.com/acidanthera/IntelMausi)                                                   |                 |
-| Audio       | Realtek        | ALC1150                                                   | [AppleALC](https://github.com/acidanthera/AppleALC)                                                       | _Layout-ID 99_  |
-| PSU         | Corsair        | SF750 750W                                                |                                                                                                           |                 |
-| Case        | Fractal Design | Node 304                                                  |                                                                                                           |                 |
-| CPU cooler  | Cryorig        | H7                                                        |                                                                                                           |                 |
-| Display     | Sony <br>Dell  | XR50X93J 50" <br>P2222H 22"                               |                                                                                                           |                 |
+| Item        | Brand          | Model                                                     | Driver                                                                                                    | Comment                                |
+| ----------- | -------------- | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| Motherboard | Asus           | Z170i Pro Gaming                                          | [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg) <br>[Lilu](https://github.com/acidanthera/Lilu) |                                        |
+| CPU         | Intel          | Core i5 6600K 3,5GHz                                      | [VirtualSMC](https://github.com/acidanthera/VirtualSMC)                                                   | _Skylake_                              |
+| RAM         | Corsair        | Vengeance LPX DDR4 3000MHz 8GB <sup>x2</sup>              | native                                                                                                    |                                        |
+| iGPU        | Intel          | HD Graphics 530                                           | [WhateverGreen](https://github.com/acidanthera/WhateverGreen)                                             | _Headless mode, <br>spoofed as HD 630_ |
+| dGPU        | Gigabyte       | RX 580 GAMING 8GB                                         | [WhateverGreen](https://github.com/acidanthera/WhateverGreen)                                             |                                        |
+| SSD         | Sandisk        | WD_BLACK SN850X NVMe M.2 <sup>x1</sup>                    | native                                                                                                    |                                        |
+| HDD         | WD             | Red 3TB 3.5" <sup>x1</sup> <br>Red 4TB 3.5" <sup>x3</sup> | native                                                                                                    |                                        |
+| Wifi        | Broadcom       | BCM94360NG <sup>802.11ac</sup>                            | native                                                                                                    | _Replaced_                             |
+| Bluetooth   | Broadcom       | BCM94360NG <sup>v4.0</sup>                                | native                                                                                                    | _Replaced_                             |
+| Ethernet    | Intel          | I219-V                                                    | [IntelMausi](https://github.com/acidanthera/IntelMausi)                                                   |                                        |
+| Audio       | Realtek        | ALC1150                                                   | [AppleALC](https://github.com/acidanthera/AppleALC)                                                       | _Layout-ID 99_                         |
+| PSU         | Corsair        | SF750 750W                                                |                                                                                                           |                                        |
+| Case        | Fractal Design | Node 304                                                  |                                                                                                           |                                        |
+| CPU cooler  | Cryorig        | H7                                                        |                                                                                                           |                                        |
+| Display     | Sony <br>Dell  | XR50X93J 50" <br>P2222H 22"                               |                                                                                                           |                                        |
 
 ## BIOS setup
 Begin by loading optimized default options, then make sure settings are as below.
