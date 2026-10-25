@@ -1,9 +1,9 @@
 # OpenCore Asus Z170i Pro Gaming + RX 580
-An OpenCore EFI for Asus Z170i Pro Gaming mini-ITX motherboard, with Skylake processor. See compatible macOS version in release. This is my third OpenCore build so far. Used as media server.
+An OpenCore EFI for Asus Z170i Pro Gaming mini-ITX motherboard, with Skylake processor. See compatible macOS version in release. This is my third OpenCore build so far. Used as my media server.
 
 Though this is a "ready to use" EFI, it is for my own system, so **use at your own risk**. I recommend everyone to read [Dortania's OpenCore install guide](https://dortania.github.io/OpenCore-Install-Guide/). It's comprehensive, but take your time and have patience, there are no shortcuts to a perfect build.
 
-I'm publishing releases here to reference my own configurations and to share my EFI with others, for a little help on the way. With that said, I will probably not publish a release every time I update my OpenCore build. **Do not forget** to [generate SMBIOS info](https://dortania.github.io/OpenCore-Install-Guide/config.plist/coffee-lake.html#platforminfo) if you are planning on using this EFI in your build, since my releases does not include this information, for obvious reasons.
+I'm publishing releases here to reference my own configurations and to share my EFI with others, for a little help on the way. With that said, I will probably not publish a release every time I update my OpenCore build. **Do not forget** to [generate SMBIOS info](https://dortania.github.io/OpenCore-Install-Guide/config.plist/skylake.html#platforminfo) if you are planning on using this EFI in your build, since my releases do not include this information, for obvious reasons.
 
 ![About this Mac](opencore_asus_z170i_pro_gaming_about_this_mac.jpg)
 
@@ -11,7 +11,7 @@ I'm publishing releases here to reference my own configurations and to share my 
 - This build runs macOS Ventura natively, without OpenCore Legacy Patcher, using SMBIOS `iMac18,3`. macOS Ventura dropped support for Skylake graphics and for iMac17,1, so the SMBIOS is set to the closest supported Kaby Lake iMac (Polaris dGPU + headless iGPU). Ventura is also the last macOS version where the Broadcom BCM94360NG wireless card is supported natively.
 - This build runs on a dedicated GPU, alongside the integrated GPU, which is only used for computing tasks and does not drive a display. If you are not using a dGPU you need to follow the [GPU patching](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/) guide.
 - The Skylake HD Graphics 530 is spoofed as a Kaby Lake HD Graphics 630 for macOS Ventura (`device-id` `1B590000`, headless `AAPL,ig-platform-id` `03001259`). A headless iGPU does not show up in System Information or in Activity Monitor's GPU History, which is expected.
-- No beauty treatments were done in this build, that means no OpenCore GUI and no boot-chime. I want to keep everything lean, simple and minimal. You can enable all of this by following the [beauty treatment](https://dortania.github.io/OpenCore-Post-Install/cosmetic/gui.html) guide.
+- No beauty treatments were done in this build, that means no OpenCore GUI and no boot-chime. I want to keep everything as lean and minimal as possible. You can enable all of this by following the [beauty treatment](https://dortania.github.io/OpenCore-Post-Install/cosmetic/gui.html) guide.
 - Wireless card for bluetooth and wifi (Qualcomm Atheros QCNFA364A) is replaced. I'm using the Broadcom BCM94360NG card instead. If you wish to swap the wireless card, remember to read [wireless buyers guide](https://dortania.github.io/Wireless-Buyers-Guide/) first.
 
 ## Hardware
@@ -19,7 +19,7 @@ Remember to read the [anti-hackintosh buyers guide](https://dortania.github.io/A
 
 | Item        | Brand          | Model                                                     | Driver                                                                                                    | Comment                                |
 | ----------- | -------------- | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------------- |
-| Motherboard | Asus           | Z170i Pro Gaming                                          | [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg) <br>[Lilu](https://github.com/acidanthera/Lilu) |                                        |
+| Motherboard | Asus           | Z170i Pro Gaming                                          | [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg) <br>[Lilu](https://github.com/acidanthera/Lilu) | _BIOS version 3805_                    |
 | CPU         | Intel          | Core i5 6600K 3,5GHz                                      | [VirtualSMC](https://github.com/acidanthera/VirtualSMC)                                                   | _Skylake_                              |
 | RAM         | Corsair        | Vengeance LPX DDR4 3000MHz 8GB <sup>x2</sup>              | native                                                                                                    |                                        |
 | iGPU        | Intel          | HD Graphics 530                                           | [WhateverGreen](https://github.com/acidanthera/WhateverGreen)                                             | _Headless mode, <br>spoofed as HD 630_ |
@@ -99,7 +99,7 @@ For USB mapping I enabled **ten** physical ports, and bluetooth <sup>M.2</sup>. 
 <sup>_** This is the second USB controller and has its own port limit. No need for USB map on this controller._</sup>
 
 ## Audio layout
-For audio layout i used **layout-ID 99**, it seemed most appropriate. Layout-ID 7 works as well, with the same exact functionality*. All other compatible layouts for this audio chipset were tested and did not work fully.
+For audio layout I used **layout-ID 99**, it seemed most appropriate. Layout-ID 7 works as well, with the same exact functionality*. All other compatible layouts for this audio chipset were tested and did not work fully.
 
 ![Blue audio jack](https://dummyimage.com/11/0000fd/0000fd) Blue audio jack acts as `Line In`<br>
 ![Green audio jack](https://dummyimage.com/11/00ad00/00ad00) Green audio jack acts as `Internal Speakers`<br>
@@ -116,7 +116,7 @@ For audio layout i used **layout-ID 99**, it seemed most appropriate. Layout-ID 
 <sup>_* The only difference between these layouts is that layout99.xml has the key MaximumBootBeepValue, value 64. It also has the key DspFunction2 with various other keys and values._</sup>
 
 ## What works?
-Everything works. Wifi and bluetooth (by disabling and replacing the internal Qualcomm Atheros QCNFA364A), iGPU acceleration, dual displays, HDMI audio, wake up from display sleep. Ethernet, all USB ports (only the internal USB 2.0 Header is disabled), all Audio ports. AirDrop/Handoff/Continuity, iMessage, FaceTime and other iServices.
+Everything works. Wifi and bluetooth (by disabling and replacing the internal Qualcomm Atheros QCNFA364A), dGPU + iGPU acceleration, multiple displays, HDMI audio. Ethernet, all USB ports (only the internal USB 2.0 Header is disabled), all Audio ports. Sleep and wake, AirDrop/Handoff/Continuity, iMessage, FaceTime and other iServices.
 
 ## Known issues
 –
@@ -128,7 +128,7 @@ Everything works. Wifi and bluetooth (by disabling and replacing the internal Qu
   <summary>Quick guide on how to debug OpenCore with my releases.</summary>
   <br>
 
-  My releases are prepared for easy dubugging, all you have to do is download the DEBUG version of [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg). Reminder, it's a good idea booting the debug EFI from a USB stick.
+  My releases are prepared for easy debugging, all you have to do is download the DEBUG version of [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg). Reminder, it's a good idea booting the debug EFI from a USB stick.
 
   **Swap the following files:**
 
@@ -154,7 +154,7 @@ Everything works. Wifi and bluetooth (by disabling and replacing the internal Qu
 Visit my [Quick Reference Guide](https://github.com/jimpalompa/macOS-OpenCore-Quick-Reference-Guide) for more macOS and OpenCore commands, guides, fixes and features.
 
 ## Software
-A collection of apps that may come handy when configuring your build. Reminder, if you wish to use this EFI in your own build, you need to [generate SMBIOS info](https://dortania.github.io/OpenCore-Install-Guide/config.plist/skylake.html#platforminfo) first. System will not boot without it. Use EFI at your own risk.
+A collection of apps that may come in handy when configuring your build. Reminder, if you wish to use this EFI in your own build, you need to [generate SMBIOS info](https://dortania.github.io/OpenCore-Install-Guide/config.plist/skylake.html#platforminfo) first. System will not boot without it. Use EFI at your own risk.
 
 [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) for generating SMBIOS<br>
 [MountEFI](https://github.com/corpnewt/MountEFI) for mounting EFI partitions<br>
